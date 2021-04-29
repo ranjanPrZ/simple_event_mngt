@@ -6,7 +6,7 @@
 <% end %>
 <div class="container mt-4">
 	<h4>Events:</h4>
-	<table class="table table-striped">
+	<table class="table table-bordered">
 	  <thead>
 	    <tr>
 	      <th scope="col">Sl no.</th>
@@ -22,7 +22,11 @@
 		      <td><%= index+1 %></td>
 		      <td><%= link_to event.title, event_details_path(event)%></td>
 		      <% if current_user %>
-							<td><%= button_to attend_status(event), attend_path(event) %></td> 
+		      	<% if(attend_status(event) == 'Event Over')%>
+		      		<td>Event Over</td>
+		      	<% else %>
+							<td><%= button_to attend_status(event), attend_path(event) %></td>
+						<% end %>
 	 				<% end %>
 	      </tr>
 	    <% end %>

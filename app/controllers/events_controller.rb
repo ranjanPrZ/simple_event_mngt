@@ -14,10 +14,15 @@ class EventsController < ApplicationController
   end
 
   def attend
-   	event_user = EventUser.new(event_id:params[:id],user_id:current_user.id)
-  	if event_user.save
-  		flash[:success] = "You can attend the event."
-  		redirect_to '/'
-  	end
+  	user_ids = EventUser.event_users(params[:id],current_user.id).pluck(:user_id)
+  	if user_ids.include?(current_user.id)
+  	  flash[:alert]="You have already subscribed to attend the event."
+  	else
+	   	event_user = EventUser.new(event_id:params[:id],user_id:current_user.id)
+	  	if event_user.save
+	  		flash[:success] = "You can attend the event."
+	  	end
+	  end
+	  redirect_to '/'
   end
 end
