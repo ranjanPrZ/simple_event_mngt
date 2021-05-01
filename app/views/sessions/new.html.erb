@@ -12,10 +12,13 @@
           <h5 class="card-title text-center">Sign In</h5>
 					<%= form_tag logged_in_path do %>
         	  <%= label_tag :email %>
-						<%= text_field_tag :email, "", class: 'form-control mb-3'%>
+						<%= text_field_tag :email, "", class: 'form-control'%>
+					  <label id="email_error"  class="d_none t_error mb-3"></label><br>
 
 						<%= label_tag :password %>
-						<%= password_field_tag :password, "", class: 'form-control mb-4'%>
+						<%= password_field_tag :password, "", class: 'form-control'%>
+						<label id="pwd_error"  class="d_none t_error mb-3"></label><br>
+
 						<p class="text-center">
 							<%= submit_tag "Login", class:'btn btn-lg btn-primary pl-3 pr-3'%>
 						</p>
