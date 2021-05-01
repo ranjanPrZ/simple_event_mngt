@@ -10,7 +10,7 @@
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center">Sign In</h5>
-					<%= form_tag logged_in_path do %>
+					<%= form_tag logged_in_path, id:'user_login' do %>
         	  <%= label_tag :email %>
 						<%= text_field_tag :email, "", class: 'form-control'%>
 					  <label id="email_error"  class="d_none t_error mb-3"></label><br>

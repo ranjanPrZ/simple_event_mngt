@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	$("form").submit(function(){
+	$("#new_user").submit(function(e){
+	  	e.preventDefault();
 		var name_field = $("#user_name").val();
 		var email_field = $("#user_email").val();
 		var pwd_field = $("#user_password").val();

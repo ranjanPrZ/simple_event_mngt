@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("form").submit(function(){
+	$("#user_login").submit(function(){
 		var email_field = $("#email").val();
 		var pwd_field = $("#password").val();
 		if(email_field.trim().length == 0){;
