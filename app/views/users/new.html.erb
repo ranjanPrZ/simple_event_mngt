@@ -5,14 +5,18 @@
         <div class="card-body">
           <h5 class="card-title text-center">Sign Up</h5>
 					<%= form_for :user, url: '/register' do |f| %>
-					  Name: <%= f.text_field :name , class: 'form-control mt-2 mb-2'%>
-					  Email: <%= f.text_field :email , class: 'form-control mt-2 mb-2'%>
-					  Password: <%= f.password_field :password , class: 'form-control mt-2 mb-2'%>
-					  Password Confirmation: <%= f.password_field :password_confirmation , class: 'form-control mt-2 mb-2'%>
+					  Name: <%= f.text_field :name , class: 'form-control mt-2 mb-2' %>
+					  	<label id="name_error" class="d_none t_error"></label><br>
+					  Email: <%= f.text_field :email , class: 'form-control mt-2 mb-2' %>
+					  	<label id="email_error"  class="d_none t_error"></label><br>
+					  Password: <%= f.password_field :password , class: 'form-control mt-2 mb-2' %>
+							<label id="pwd_error"  class="d_none t_error"></label><br>
+					  Password Confirmation: <%= f.password_field :password_confirmation , class: 'form-control mt-2 mb-2' %>
+					  	<label id="cmf_pwd_error"  class="d_none t_error"></label>
 					  Gender: <%= f.radio_button :gender, :Female, class:'mr-2 ml-2' %>Female
 										<%= f.radio_button :gender, :Male, class:'mr-2 ml-2' %>Male <br>
 						<p class="text-center mt-4">
-							<%= f.submit "Create account", class:'btn btn-success mt-2 mb-2'%>
+							<%= f.submit "Create account", class:'btn btn-success mt-2 mb-2' %>
 						</p>
 					<% end %>
 					<p class="text-center">
